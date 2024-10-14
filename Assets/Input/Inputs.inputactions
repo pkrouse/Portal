@@ -1,0 +1,54 @@
+{
+    "name": "Inputs",
+    "maps": [
+        {
+            "name": "MyActionMap",
+            "id": "a87db996-ee9d-4df9-a0d1-ce3b358fd044",
+            "actions": [
+                {
+                    "name": "PortalToggle",
+                    "type": "Value",
+                    "id": "45dda828-a5c9-4d10-828e-210c104c37dd",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PortalFire",
+                    "type": "Button",
+                    "id": "fced2319-334e-44bb-b459-2914d1a75e83",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a5d0f37e-e0a6-4911-98e5-2068a50f398a",
+                    "path": "<XRController>{RightHand}/{Primary2DAxis}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PortalToggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0c80c7c1-27ae-4a5a-aaf8-59c3371e9170",
+                    "path": "<XRController>{RightHand}/{TriggerButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PortalFire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
