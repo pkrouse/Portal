@@ -5,7 +5,7 @@ using UnityEngine;
 public class PortalController : MonoBehaviour
 {
     [SerializeField] private PortalController OtherPortal;
-    [SerializeField] ParticleSystem[] particles = new ParticleSystem[2];
+    [SerializeField] ParticleSystem particles;
     void Start()
     {
        
@@ -13,9 +13,6 @@ public class PortalController : MonoBehaviour
 
     public void ShutDownParticles()
     {
-        foreach (ParticleSystem particle in particles)
-        {
-            particle.Stop();
-        }
+        particles.Stop();
     }
 }
