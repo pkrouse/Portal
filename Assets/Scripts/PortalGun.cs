@@ -44,6 +44,8 @@ public class PortalGun : MonoBehaviour
 
     private RaycastHit hit;
     private bool hitValid = false;
+
+    private bool isHeld = false;
     void Start()
     {
         hitMask = LayerMask.GetMask("AimFriendly");
@@ -59,7 +61,7 @@ public class PortalGun : MonoBehaviour
 
     void Update()
     {
-        if (Physics.Raycast(aimer.position, aimer.forward, out hit, 500, hitMask))
+        if (isHeld && Physics.Raycast(aimer.position, aimer.forward, out hit, 500, hitMask))
         {
             hitValid = true;
             laserLine.enabled = true;
@@ -75,6 +77,16 @@ public class PortalGun : MonoBehaviour
             laserLine.enabled = false;
             hitValid = false;
         }
+    }
+
+    public void PickedUp( )
+    {
+        isHeld = true;
+    }
+
+    public void Dropped( )
+    {
+        isHeld = false;
     }
 
     private void onActionTriggered(InputAction.CallbackContext context)

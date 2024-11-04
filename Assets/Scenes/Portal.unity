@@ -5616,6 +5616,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1435025038}
+    - target: {fileID: 1506940363572788565, guid: 4223cf63be0b6d94c82fa3fa0d39c8a5,
+        type: 3}
+      propertyPath: BluePortalPrefab
+      value: 
+      objectReference: {fileID: 860058890493025542, guid: ef341bfaf8c4eb9429e563bb07d5dbc5,
+        type: 3}
+    - target: {fileID: 1506940363572788565, guid: 4223cf63be0b6d94c82fa3fa0d39c8a5,
+        type: 3}
+      propertyPath: OrangePortalPrefab
+      value: 
+      objectReference: {fileID: 5667311781767974454, guid: c9f865a2c60777d4383d7d4dd9e2e7be,
+        type: 3}
     - target: {fileID: 5990651435978229169, guid: 4223cf63be0b6d94c82fa3fa0d39c8a5,
         type: 3}
       propertyPath: m_Mesh
@@ -5624,7 +5636,7 @@ PrefabInstance:
     - target: {fileID: 5990651435978229169, guid: 4223cf63be0b6d94c82fa3fa0d39c8a5,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 982
+      value: 1021
       objectReference: {fileID: 0}
     - target: {fileID: 6220328718523670750, guid: 4223cf63be0b6d94c82fa3fa0d39c8a5,
         type: 3}
