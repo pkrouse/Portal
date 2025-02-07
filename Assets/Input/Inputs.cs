@@ -44,6 +44,15 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Boing"",
+                    ""type"": ""Button"",
+                    ""id"": ""134b369d-e7fa-4af7-8c64-a37ae6dbd34c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -68,6 +77,17 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""action"": ""PortalFire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""82464eb8-8ba2-4bb7-8c6e-a25503a8a1a4"",
+                    ""path"": ""<XRController>{RightHand}/{TriggerButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Boing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -78,6 +98,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_MyActionMap = asset.FindActionMap("MyActionMap", throwIfNotFound: true);
         m_MyActionMap_PortalToggle = m_MyActionMap.FindAction("PortalToggle", throwIfNotFound: true);
         m_MyActionMap_PortalFire = m_MyActionMap.FindAction("PortalFire", throwIfNotFound: true);
+        m_MyActionMap_Boing = m_MyActionMap.FindAction("Boing", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -141,12 +162,14 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private List<IMyActionMapActions> m_MyActionMapActionsCallbackInterfaces = new List<IMyActionMapActions>();
     private readonly InputAction m_MyActionMap_PortalToggle;
     private readonly InputAction m_MyActionMap_PortalFire;
+    private readonly InputAction m_MyActionMap_Boing;
     public struct MyActionMapActions
     {
         private @Inputs m_Wrapper;
         public MyActionMapActions(@Inputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @PortalToggle => m_Wrapper.m_MyActionMap_PortalToggle;
         public InputAction @PortalFire => m_Wrapper.m_MyActionMap_PortalFire;
+        public InputAction @Boing => m_Wrapper.m_MyActionMap_Boing;
         public InputActionMap Get() { return m_Wrapper.m_MyActionMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -162,6 +185,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @PortalFire.started += instance.OnPortalFire;
             @PortalFire.performed += instance.OnPortalFire;
             @PortalFire.canceled += instance.OnPortalFire;
+            @Boing.started += instance.OnBoing;
+            @Boing.performed += instance.OnBoing;
+            @Boing.canceled += instance.OnBoing;
         }
 
         private void UnregisterCallbacks(IMyActionMapActions instance)
@@ -172,6 +198,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @PortalFire.started -= instance.OnPortalFire;
             @PortalFire.performed -= instance.OnPortalFire;
             @PortalFire.canceled -= instance.OnPortalFire;
+            @Boing.started -= instance.OnBoing;
+            @Boing.performed -= instance.OnBoing;
+            @Boing.canceled -= instance.OnBoing;
         }
 
         public void RemoveCallbacks(IMyActionMapActions instance)
@@ -193,5 +222,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     {
         void OnPortalToggle(InputAction.CallbackContext context);
         void OnPortalFire(InputAction.CallbackContext context);
+        void OnBoing(InputAction.CallbackContext context);
     }
 }
